@@ -4,89 +4,104 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="style.css">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-  <title>Home Page</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+  <title>Login</title>
   <link rel="icon" href="/img/m_logo_webp.webp">
-  <div class="mmlogo">
-    <img src="img/logo.png" alt="logo M.M." width="250px">
-  </div>
-  <div class="mmcanto1">
-    <img src="./img/Barras-Esquerda.png" alt="M&M foto" width="400px">
-  </div>
-  <div class="mmcanto2">
-    <img src="./img/Barras direita.png" alt="M&M foto" width="600px">
-  </div>
+  <link rel="stylesheet" href="style_login.css">
 </head>
 
 <body>
 
-  <div class="corpo">
-    <div class="head">
-      <ul class="nav nav-tabs">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="index.html">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="produtos.html">Produtos</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="contato.html">Contato</a>
-        </li>
-      </ul>
+  <div class="head">
 
-      <div class="pesquisa">
-        <input type="text" id="lupa">
-      </div>
-      <div class="brasil">
-        <img src="./img/brasil ok.jpeg" width="40px">
-      </div>
-      <div class="shop">
-        <img src="./img/carrinho.png" width="30px">
-      </div>
-      <div class="user">
-        <img src="./img/user.png" width="30px">
-      </div>
+    <div class="pesquisa">
+      <input type="text" id="lupa">
     </div>
 
-    <section id="home">
-      <div id="carrosel">
-        <div id="carouselExampleIndicators" class="carousel slide">
-          <div class="carousel-indicators">
-            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-          </div>
-          <div class="carousel-inner">
-            <div class="carousel-item active">
-              <img src="./img/img home.png" alt="Home 1" class="d-block mx-auto slid1" width="900px">
-            </div>
-            <div class="carousel-item">
-              <img src="./img/home2.png" alt="Home 2" class="d-block mx-auto slid2" width="300px">
-            </div>
-            <div class="carousel-item">
-              <img src="./img/home3.png" alt="Home 3" class="d-block mx-auto slid3" width="600px">
-            </div>
-          </div>
-          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-          </button>
-          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-          </button>
-      </div>
-      
+    <div id="brasil">
+      <img src="/img/brasil ok.jpeg" width="30px" alt="brasil">
     </div>
-    </section>
-    
+
+    <div id="compras">
+      <img src="/img/carrinho.png" width="30px" alt="carrinho">
+    </div>
+
+    <div id="user">
+      <img src="/img/user.png" width="30px" alt="carrinho">
+    </div>
+
+    <div class="Logo_M">
+      <img src="/img/logo.png" alt="logo" width="300px">
+    </div>
   </div>
+
+  <div class="corpo">
+
+    <div class="direita">
+      <img src="/img/Barras direita.png" alt="barras_direita" width="435px">
+    </div>
+    <div class="esquerda">
+      <img src="/img/Barras-Esquerda.png" alt="barras_esquerda" width="350px">
+    </div>
+
+    <div class="row">
+      <div class="col-4"></div>
+      <div class="col-4">
+        <div class="login-container">
+          <div class="text-center">
+            <button type="button" id="login-button">
+              <img src="/img/m_logo_webp.webp" alt="Login" width="70">
+            </button>
+            <h1>Tela login</h1>
+          </div>
+          <form id="login-form" onsubmit="event.preventDefault(); authenticate();">
+            <div class="mb-3">
+              <label for="username" class="form-label">Nome do Usuário:</label>
+              <input type="text" class="form-control" id="username" name="username" required>
+            </div>
+
+            <div class="mb-4">
+              <label for="password" class="form-label">Senha:</label>
+              <input type="password" class="form-control" id="password" name="password" required>
+            </div>
+            <div class="text-center">
+              <button type="button" class="btn btn-outline-danger">Cadastrar</button>
+              <button type="submit" class="btn btn-outline-success">Enviar</button>
+            </div>
+          </form>
+          <div class="mb-3">
+            <p id="error-message" class="error"></p>
+          </div>
+        </div>
+      </div>
+      <div class="col-3"></div>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById("login-button").addEventListener("click", function () {
+      document.getElementById("username").value = "admin";
+      document.getElementById("password").value = "123";
+    });
+
+    function authenticate() {
+      var username = document.getElementById("username").value;
+      var password = document.getElementById("password").value;
+
+      if (username === "admin" && password === "123") {
+        alert("Seja bem-vindo, Vini! Incrível rei do universo, o melhor de todos, super maravilhoso e perfeito.");
+        window.location.href = "home.html";
+      } else {
+        alert("Credenciais inválidas. Tente novamente.");
+      }
+    }
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+    crossorigin="anonymous"></script>
+
 </body>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
-  integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
-  integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
 
 </html>
